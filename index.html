@@ -88,16 +88,21 @@
             }
             cardItem{
                 width: 200px;
-                height: 98%;
+                height: 96%;
                 background-color: #ffffff;
-                border-radius: 10px;
+                border-radius: 5px;
                 background-size:cover;
-                display: inline;
+                display: flex;
                 z-index: 10;
                 float: left;
+                margin-top: 1%;
+                margin-bottom: 1%;
             }
             card > p {
-                margin-left: 10px;
+                margin-left: 10%;
+                padding: 10px;
+                display: inline-flexbox;
+                font-size: 15px;
             }
             card > a {
                 margin-left: 10px;
@@ -155,11 +160,11 @@
                 border-radius: 10px;
             }
             .top{
-                border-radius: 100%;
+                border-radius: 0.25rem;
                 width: 50px;
                 height: 50px;
                 position:fixed;
-                top: 94vh;
+                top: 92vh;
                 left: 1vh;
                 background-color: #555;
 
@@ -183,7 +188,7 @@
         <div id="scroll-to-top" class="top"><span style="pointer-events:none;" class="material-symbols-outlined">arrow_upward</span></div>
         <div class="header">
             <h3>Tristan Greenhagen - Portfolio</h3>
-            <p>Hi my name is Tristan, I am proficient in the languages Python, Java, and C#, and I have experience in physics programming and data management regarding Python, Minecraft Plugin development regarding Java, and in Unity Engine game development in C#. I also have some knowledge regarding web development skills (HTML, JavaScript, and CSS).</p>
+            <p>Hi, my name is Tristan. I am profficient in the languages Python, Java, and C#. I have made several games using the Unity game engine and C#, I have created projects for data management, and physics simulations in python, and I have created some Minecraft Plugins with Java. As well as this experience I have also made a few websites using HTML, JavaScript, and CSS.</p>
             <nav>
                 <button onclick="window.location.href='https://github.com/OpEnchanter'">Github</button>
                 <button onclick="window.location.href='https://www.youtube.com/@openchanter'">YouTube</button>
@@ -194,7 +199,6 @@
                 <cardItem style="background-image: url('phys_eng.png');"></cardItem>
                 <h3>2D Pygame Physics Engine</h3>
                 <br style="margin: 10px">
-                <p><strong>About</strong></p>
                 <p>This is a 2D phyiscs engine that I wrote in python, it includes 2D box colliders, and some simple rigidbody physics including grabbing, and moving objects.</p>
                 <a href="https://github.com/OpEnchanter/python-phys-2.0"><strong>Link</strong></a>
             </card>
@@ -202,7 +206,6 @@
                 <cardItem style="background-image: url('guns.png');"></cardItem>
                 <h3>GunsMC - Minecraft Plugin</h3>
                 <br style="margin: 10px">
-                <p><strong>About</strong></p>
                 <p>This is a Minecraft Paper server plugin written in java that adds a /gun command that allows the player to get a custom hoe item that allows the player to attack entities from 50 blocks away.</p>
                 <a href="https://github.com/OpEnchanter/guns-mc"><strong>Link</strong></a>
             </card>
@@ -210,7 +213,6 @@
                 <cardItem style="background-image: url('renderer.png');"></cardItem>
                 <h3>Particle Renderer - Minecraft Plugin</h3>
                 <br style="margin: 10px">
-                <p><strong>About</strong></p>
                 <p>This is a Minecraft Paper server plugin that adds some commands for drawing different shapes out of particles, using the added /draw command, this can be used in other projects by extracting the renderer.jar file.</p>
                 <a href="https://github.com/OpEnchanter/particle-rendering-lib-paper"><strong>Link</strong></a>
             </card>
@@ -218,7 +220,6 @@
                 <cardItem style="background-image: url('renderer.png');"></cardItem>
                 <h3>WebChat - Website Messaging</h3>
                 <br style="margin: 10px">
-                <p><strong>About</strong></p>
                 <p>This is a website messaging service written in HTML, JS and CSS with a python backend.</p>
                 <a href="https://github.com/OpEnchanter/webchat"><strong>Link</strong></a>
             </card>
@@ -226,7 +227,6 @@
                 <cardItem style="background-image: url('renderer.png');"></cardItem>
                 <h3>MCLOL - Minecraft Server</h3>
                 <br style="margin: 10px">
-                <p><strong>About</strong></p>
                 <p>This is a Minecraft server with a fully implemented magic system, that includes wands and spells.</p>
                 <a href="https://www.mclol.pro"><strong>Link</strong></a>
             </card>
