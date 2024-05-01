@@ -1,7 +1,6 @@
-<!DOCTYPE html>
 <html>
     <head>
-        <title>Tristan Greenhagen - Portfolio</title>
+        <title>Tristan Greenhagen - Blog - Physics Engine</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
         <style>
             .up {
@@ -99,9 +98,9 @@
                 margin-bottom: 1%;
             }
             card > p {
-                margin-left: 10%;
+                margin-left: 0;
                 padding: 10px;
-                display: inline-flexbox;
+                display: flexbox;
                 font-size: 15px;
             }
             card > a {
@@ -209,58 +208,22 @@
     <body>
         <div id="scroll-to-top" class="top"><span style="pointer-events:none;" class="material-symbols-outlined">arrow_upward</span></div>
         <div class="header">
-            <h3>Tristan Greenhagen - Portfolio</h3>
-            <p>Hi, my name is Tristan. I am profficient in the languages Python, Java, and C#. I have made several games using the Unity game engine with C#, I have completed projects for data management and physics simulation in Python, and I have created several Minecraft Plugins with Java. In addition to this experience I have also made a few websites using HTML, JavaScript, and CSS.</p>
+            <h1>Physics Engine Blog</h1>
             <nav>
-                <div class="sect" onclick="window.location.href='https://github.com/OpEnchanter'">
-                    <h3>Github</h3>
+                <div class="sect" onclick="window.location.href='../'">
+                    <h3>Back</h3>
                 </div>
-                <div class="sect" onclick="window.location.href='https://www.youtube.com/@openchanter'">
-                    <h3>YouTube</h3>
-                </div>
-                <div class="sect" onclick="window.location.href='https://openchanter.itch.io'">
-                    <h3>Itch.io</h3>
-                </div>
-                <div class="sect" onclick="window.location.href='./blog'">
-                    <h3>Blog</h3>
+                <div class="sect" onclick="window.location.href='/'">
+                    <h3>Home</h3>
                 </div>
             </nav>
         </div>
         <div class="main">
-            <card>
-                <cardItem style="background-image: url('phys_eng.png');"></cardItem>
-                <h3>2D Pygame Physics Engine</h3>
-                <br style="margin: 10px">
-                <p>This is a 2D phyiscs engine that I wrote in python, it includes 2D box colliders, and some simple rigidbody physics including grabbing, and moving objects.</p>
-                <a href="https://github.com/OpEnchanter/python-phys-2.0"><strong>Link</strong></a>
-            </card>
-            <card>
-                <cardItem style="background-image: url('guns.png');"></cardItem>
-                <h3>GunsMC - Minecraft Plugin</h3>
-                <br style="margin: 10px">
-                <p>This is a Minecraft Paper server plugin written in java that adds a /gun command that allows the player to get a custom hoe item that allows the player to attack entities from 50 blocks away.</p>
-                <a href="https://github.com/OpEnchanter/guns-mc"><strong>Link</strong></a>
-            </card>
-            <card>
-                <cardItem style="background-image: url('renderer.png');"></cardItem>
-                <h3>Particle Renderer - Minecraft Plugin</h3>
-                <br style="margin: 10px">
-                <p>This is a Minecraft Paper server plugin that adds some commands for drawing different shapes out of particles, using the added /draw command, this can be used in other projects by extracting the renderer.jar file.</p>
-                <a href="https://github.com/OpEnchanter/particle-rendering-lib-paper"><strong>Link</strong></a>
-            </card>
-            <card>
-                <cardItem style="background-image: url('renderer.png');"></cardItem>
-                <h3>WebChat - Website Messaging</h3>
-                <br style="margin: 10px">
-                <p>This is a website messaging service written in HTML, JS and CSS with a python backend.</p>
-                <a href="https://github.com/OpEnchanter/webchat"><strong>Link</strong></a>
-            </card>
-            <card>
-                <cardItem style="background-image: url('renderer.png');"></cardItem>
-                <h3>MCLOL - Minecraft Server</h3>
-                <br style="margin: 10px">
-                <p>This is a Minecraft server with a fully implemented magic system, that includes wands and spells.</p>
-                <a href="https://www.mclol.pro"><strong>Link</strong></a>
+            <card  onclick="window.location.href='5-1-2024.html'">
+                <h3>Blog ( 5 / 1 / 2024 )</h3>
+                <p>
+                    This is the first blog of mine in regards to my newest physics engine, which I am hoping to add more in depth grabbing physics, rotations of objects, and more accurate collisions.
+                </p>
             </card>
         </div>
         <script>
