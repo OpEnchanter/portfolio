@@ -36,30 +36,30 @@
             transition: 0.3s ease;
         }
 
-        card_cover {
+        .card_cover {
             position: absolute;
-            transform: translateX(-100%);
+            left: -100%;
             width: 200px;
             aspect-ratio: 9/16;
             background-color: rgba(0,0,0,0.5);
-            transition: transform 0.3s ease; /* Added transition for smooth animation */
+            transition: 0.3s ease; /* Added transition for smooth animation */
             color: #ffffff;
             
             text-align: center;
         }
 
-        card_cover > p{
+        .card_cover > p{
             font-size: 12px;
             margin: 5px;
             pointer-events: none;
         }
 
-        .card:hover > card_cover {
-            transform: translateX(-90%); /* Move card_cover to the right */
+        .card:hover > .card_cover {
+            transform: translateX(10%); /* Move card_cover to the right */
         }
 
-        .card:active > card_cover {
-            transform: translateX(0%); /* Move card_cover to the right */
+        .card:active > .card_cover {
+            transform: translateX(100%); /* Move card_cover to the right */
             background-color: rgba(0,0,0,0.9);
         }
 
@@ -72,23 +72,23 @@
         }
     </style>
 </head>
-    <body>
-        <div class="main">
-            <div class="card">
-                <card_cover>
-                    <p>This is a simple HTML & CSS hover effect.</p>
-                </card_cover>
-            </div>
-            <div class="card">
-                <card_cover>
-                    <p>This is made by Tristan Greenhagen.</p>
-                </card_cover>
-            </div>
-            <div class="card">
-                <card_cover>
-                    <p>Find more of my work at tgreenhagen.com</p>
-                </card_cover>
-            </div>
+<body>
+<div class="main">
+    <div class="card a">
+        <div class="card_cover">
+            <p>This is a simple HTML & CSS hover effect.</p>
         </div>
-    </body>
+    </div>
+    <div class="card b">
+        <div class="card_cover">
+            <p>This is made by Tristan Greenhagen.</p>
+        </div>
+    </div>
+    <div class="card c">
+        <div class="card_cover">
+            <p>Find more of my work at tgreenhagen.com</p>
+        </div>
+    </div>
+</div>
+</body>
 </html>
