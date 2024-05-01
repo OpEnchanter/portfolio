@@ -38,7 +38,7 @@
 
         card_cover {
             position: absolute;
-            left: -100%;
+            transform: translateX(-100%);
             width: 200px;
             aspect-ratio: 9/16;
             background-color: rgba(0,0,0,0.5);
@@ -55,11 +55,11 @@
         }
 
         .card:hover > card_cover {
-            transform: translateX(10%); /* Move card_cover to the right */
+            transform: translateX(-90%); /* Move card_cover to the right */
         }
 
         .card:active > card_cover {
-            transform: translateX(100%); /* Move card_cover to the right */
+            transform: translateX(0%); /* Move card_cover to the right */
             background-color: rgba(0,0,0,0.9);
         }
 
@@ -72,23 +72,23 @@
         }
     </style>
 </head>
-<body>
-<div class="main">
-    <div class="card">
-        <card_cover>
-            <p>This is a simple HTML & CSS hover effect.</p>
-        </card_cover>
-    </div>
-    <div class="card">
-        <card_cover>
-            <p>This is made by Tristan Greenhagen.</p>
-        </card_cover>
-    </div>
-    <div class="card">
-        <card_cover>
-            <p>Find more of my work at tgreenhagen.com</p>
-        </card_cover>
-    </div>
-</div>
-</body>
+    <body>
+        <div class="main">
+            <div class="card">
+                <card_cover>
+                    <p>This is a simple HTML & CSS hover effect.</p>
+                </card_cover>
+            </div>
+            <div class="card">
+                <card_cover>
+                    <p>This is made by Tristan Greenhagen.</p>
+                </card_cover>
+            </div>
+            <div class="card">
+                <card_cover>
+                    <p>Find more of my work at tgreenhagen.com</p>
+                </card_cover>
+            </div>
+        </div>
+    </body>
 </html>
