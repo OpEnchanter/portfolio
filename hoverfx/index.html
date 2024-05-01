@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+
+        .main {
+            display: flex;
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to bottom, #fe9400, #e1403c, #53175f);
+            align-content: center;
+            place-items: center;
+            justify-content: center;
+
+        }
+
+        .card {
+            display: flex;
+            position: relative;
+            width: 200px;
+            aspect-ratio: 9/16;
+            background-color: white;
+            background-image: url("https://i.pinimg.com/736x/e1/be/b4/e1beb4439e4f69bd4d9487337032b05c.jpg");
+            background-size: cover;
+            overflow: hidden;
+            border-radius: 5px;
+            margin: 10px;
+            border-width: 0px;
+            transition: 0.3s ease;
+        }
+
+        card_cover {
+            position: absolute;
+            left: -100%;
+            width: 200px;
+            aspect-ratio: 9/16;
+            background-color: rgba(0,0,0,0.5);
+            transition: transform 0.3s ease; /* Added transition for smooth animation */
+            color: #ffffff;
+            
+            text-align: center;
+        }
+
+        card_cover > p{
+            font-size: 12px;
+            margin: 5px;
+            pointer-events: none;
+        }
+
+        .card:hover > card_cover {
+            transform: translateX(10%); /* Move card_cover to the right */
+        }
+
+        .card:active > card_cover {
+            transform: translateX(100%); /* Move card_cover to the right */
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .card:hover{
+            transform: scale(110%);
+        }
+
+        .card:active{
+            transform: scale(110%);
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="card">
+        <card_cover>
+            <p>This is a simple HTML & CSS hover effect.</p>
+        </card_cover>
+    </div>
+    <div class="card">
+        <card_cover>
+            <p>This is made by Tristan Greenhagen.</p>
+        </card_cover>
+    </div>
+    <div class="card">
+        <card_cover>
+            <p>Find more of my work at tgreenhagen.com</p>
+        </card_cover>
+    </div>
+</div>
+</body>
+</html>
