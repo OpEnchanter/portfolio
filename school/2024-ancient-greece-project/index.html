@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+
+        .main {
+            display: flex;
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to bottom, #195499, #1789ab, #02a1d7);
+            align-content: center;
+            place-items: center;
+            justify-content: center;
+
+        }
+
+        .card {
+            display: flex;
+            position: relative;
+            width: 200px;
+            aspect-ratio: 9/16;
+            background-color: black;
+            background-image: url("https://cdn.pixabay.com/photo/2015/11/15/07/47/geometry-1044090_640.jpg");
+            /*background-image: url("https://i.pinimg.com/736x/e1/be/b4/e1beb4439e4f69bd4d9487337032b05c.jpg");*/
+            background-size: cover;
+            overflow: hidden;
+            border-radius: 5px;
+            margin: 10px;
+            border-width: 0px;
+            transition: 0.3s ease;
+        }
+
+        .card_cover {
+            position: absolute;
+            left: -100%;
+            width: 200px;
+            aspect-ratio: 9/16;
+            background-color: rgba(0,0,0,0.5);
+            transition: 0.3s ease; /* Added transition for smooth animation */
+            color: #ffffff;
+            
+            text-align: center;
+
+            z-index: 1;
+        }
+
+        .text_container{
+            width: 85%;
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+        }
+
+        .text_container > p{
+            font-size: 12px;
+            margin: 5px;
+            text-overflow: ellipsis;
+            pointer-events: none;
+        }
+
+        .card_cover > p{
+            font-size: 12px;
+            margin: 5px;
+            text-overflow: ellipsis;
+            pointer-events: none;
+        }
+
+        .card:hover > .card_cover {
+            transform: translateX(10%); /* Move card_cover to the right */
+        }
+
+        .card:active > .card_cover {
+            transform: translateX(100%); /* Move card_cover to the right */
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .card:hover{
+            transform: scale(110%);
+        }
+
+        .card:active{
+            transform: scale(110%);
+        }
+
+        .card > button{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 75%;
+        }
+
+        .nav{
+            display: flex;
+            position:absolute;
+            width: 550px;
+            aspect-ratio: 5/0.75;
+            top: 65vh;
+            border-radius: 5px;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        .nav_section{
+            display: flex-grid;
+            position: relative;
+            width: 100%;
+            background-color: rgba(0,0,0,0);
+
+            transition-duration: 0.3s;
+
+            align-content: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+
+            color: white;
+
+            font-size: 13px;
+        }
+        .nav_section:hover{
+            background-color: rgba(0,0,0,0.75);
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="card a">
+        <div class="card_cover">
+            <p><strong>All About</strong></p>
+            <div class="text_container">
+                <p>Ancient Greek Mathematics</p>
+            </div>
+        </div>
+    </div>
+    <div class="card b">
+        <div class="card_cover">
+            <p><strong>All About</strong></p>
+            <div class="text_container">
+                <p>Modern Mathematics</p>
+            </div>
+        </div>
+    </div>
+    <div class="card c">
+        <div class="card_cover">
+            <p><strong>All About</strong></p>
+            <div class="text_container">
+                <p>How Greek Mathematics got us to where we are today.</p>
+            </div>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="nav_section">
+            <p>Greek Mathematics</p>
+        </div>
+        <div class="nav_section">
+            <p>Modern Mathematics</p>
+        </div>
+        <div class="nav_section">
+            <p>Mathematical Evolution</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
