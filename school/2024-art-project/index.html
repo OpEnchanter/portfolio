@@ -6,16 +6,26 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                flex-direction: column;
+                background-color: rgb(95, 95, 95);
+                font-family: sans-serif;
             }
             .row{
-                
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                height: 50vh;
+                width: 100%;
             }
             .cardContainer{
-                position: absolute;
-                top: 50%;
-                left: 50%;
+                position: relative;
+                padding: 10px;
+                width: 150px;
+                aspect-ratio: 4/6;
+                margin: 75px;
             }
-            a {
+            .card {
                 width: 150px;
                 aspect-ratio: 4/6;
                 background-color: rgb(135, 135, 135);
@@ -24,8 +34,9 @@
                 display: flex;
                 border-radius: 5px;
                 position: absolute;
-                transition-duration: 0.1s;
+                transition: ease-in-out 0.2s;
                 transform-origin: 50% 50%;
+                pointer-events: none;
             }
 
             .card001{
@@ -44,25 +55,65 @@
                 transform-origin: 50% 100%;
             }
 
+            .card004{
+                pointer-events: none;
+                background-color: rgb(135, 135, 255);
+                transform-origin: 50% 100%;
+            }
+
             .cardContainer:hover .card001 {
                 transform: scale(1.3) rotateZ(5deg);
             }
 
             .cardContainer:hover .card002{
-                transform: rotateZ(25deg) scale(1.1);
+                transform: rotateZ(30deg) scale(1.1);
             }
             .cardContainer:hover .card003{
-                transform: rotateZ(-25deg) scale(1.1);
+                transform: rotateZ(-35deg) scale(1.1);
+            }
+            .cardContainer:hover .card004{
+                transform: rotateZ(-15deg) scale(1.1);
             }
             
         </style>
     </head>
     <body>
         <h1>Artist Name</h1>
-        <div class="cardContainer">
-            <a class="card001">Test</a>
-            <a class="card002">Test2</a>
-            <a class="card003">Test2</a>
+        <div class="row">
+            <div class="cardContainer" onclick="window.location.href = 'slides/slide1'">
+                <div class="card card001">Slide 1</div>
+                <div class="card card002"></div>
+                <div class="card card003"></div>
+                <div class="card card004"></div>
+            </div>
+
+            <div class="cardContainer" onclick="window.location.href = 'slides/slide2'">
+                <div class="card card001">Slide 2</div>
+                <div class="card card002"></div>
+                <div class="card card003"></div>
+                <div class="card card004"></div>
+            </div>
+
+            <div class="cardContainer" onclick="window.location.href = 'slides/slide3'">
+                <div class="card card001">Slide 3</div>
+                <div class="card card002"></div>
+                <div class="card card003"></div>
+                <div class="card card004"></div>
+            </div>
+
+            <div class="cardContainer" onclick="window.location.href = 'slides/slide4'">
+                <div class="card card001">Slide 4</div>
+                <div class="card card002"></div>
+                <div class="card card003"></div>
+                <div class="card card004"></div>
+            </div>
+
+            <div class="cardContainer" onclick="window.location.href = 'slides/slide5'">
+                <div class="card card001">Slide 5</div>
+                <div class="card card002"></div>
+                <div class="card card003"></div>
+                <div class="card card004"></div>
+            </div>
         </div>
     </body>
 </html>
