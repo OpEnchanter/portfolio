@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .row{
+                
+            }
+            .cardContainer{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+            }
+            a {
+                width: 150px;
+                aspect-ratio: 4/6;
+                background-color: rgb(135, 135, 135);
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                border-radius: 5px;
+                position: absolute;
+                transition-duration: 0.1s;
+                transform-origin: 50% 50%;
+            }
+
+            .card001{
+                z-index: 10000000;
+            }
+
+            .card002{
+                pointer-events: none;
+                background-color: rgb(255, 135, 135);
+                transform-origin: 50% 100%;
+            }
+
+            .card003{
+                pointer-events: none;
+                background-color: rgb(135, 255, 135);
+                transform-origin: 50% 100%;
+            }
+
+            .cardContainer:hover .card001 {
+                transform: scale(1.3) rotateZ(5deg);
+            }
+
+            .cardContainer:hover .card002{
+                transform: rotateZ(25deg) scale(1.1);
+            }
+            .cardContainer:hover .card003{
+                transform: rotateZ(-25deg) scale(1.1);
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h1>Artist Name</h1>
+        <div class="cardContainer">
+            <a class="card001">Test</a>
+            <a class="card002">Test2</a>
+            <a class="card003">Test2</a>
+        </div>
+    </body>
+</html>
