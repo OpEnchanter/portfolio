@@ -2,28 +2,39 @@
 <html>
     <head>
         <style>
+            html {
+                overflow: hidden;
+                background: linear-gradient(yellow, black);
+            }
             body {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
-                background-color: rgb(95, 95, 95);
+                background: radial-gradient(black 10%, transparent 11%);
+                background-size: 120px 120px; /* Comment: Sets the size of the background dots */
+                background-position: 0 0, 30px 30px; /* Comment: Sets the position of the background dots */
+                background-repeat: repeat;
                 font-family: sans-serif;
+                width: 100%;
+                height: 100vh;
+
             }
             .row{
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 justify-content: center;
-                height: 50vh;
+                height: 175px;
                 width: 100%;
+                
             }
             .cardContainer{
                 position: relative;
                 padding: 10px;
                 width: 150px;
                 aspect-ratio: 4/6;
-                margin: 75px;
+                margin: 65px;
             }
             .card {
                 width: 150px;
@@ -35,8 +46,9 @@
                 border-radius: 5px;
                 position: absolute;
                 transition: ease-in-out 0.15s;
-                transform-origin: 50% 50%;
+                transform-origin: 50% 100%;
                 pointer-events: none;
+                background-size:contain;
             }
 
             .card001{
@@ -55,65 +67,75 @@
                 transform-origin: 50% 100%;
             }
 
-            .card004{
-                pointer-events: none;
-                background-color: rgb(135, 135, 255);
-                transform-origin: 50% 100%;
+            .cardContainer:hover {
+                cursor: pointer;
             }
 
             .cardContainer:hover .card001 {
-                transform: scale(1.3) rotateZ(5deg);
+                transform: rotateZ(25deg) scale(1.0);
             }
 
             .cardContainer:hover .card002{
-                transform: rotateZ(30deg) scale(1.1);
+                transform: rotateZ(-15deg) scale(1.0);
             }
             .cardContainer:hover .card003{
-                transform: rotateZ(-35deg) scale(1.1);
+                transform: rotateZ(-55deg) scale(1.0);
             }
-            .cardContainer:hover .card004{
-                transform: rotateZ(-15deg) scale(1.1);
+
+            button {
+                margin-top: 95px;
+                width: 270px;
+                height: 55px;
+                border: none;
+                border-radius: 5px;
+                background-color: rgb(135, 135, 135);
+                transition-duration: 0.15s;
+            }
+
+            button:hover {
+                background-color: rgb(75, 75, 75);
+            }
+
+            h1 {
+                margin-bottom: 55px;
             }
             
         </style>
     </head>
     <body>
-        <h1>Artist Name</h1>
+        <h1>Yayoi Kusama</h1>
         <div class="row">
             <div class="cardContainer" onclick="window.location.href = 'slides/slide1'">
-                <div class="card card001">Slide 1</div>
-                <div class="card card002"></div>
-                <div class="card card003"></div>
-                <div class="card card004"></div>
+                <div class="card card001">Life</div>
+                <div class="card card002" style="background-image: url('resources/Yayoi_Kusama.jpg');"></div>
+                <div class="card card003" style="background-image: url('resources/Yayoi_Kusama_2.jpg');"></div>
             </div>
 
             <div class="cardContainer" onclick="window.location.href = 'slides/slide2'">
-                <div class="card card001">Slide 2</div>
-                <div class="card card002"></div>
-                <div class="card card003"></div>
-                <div class="card card004"></div>
+                <div class="card card001">Artwork</div>
+                <div class="card card002" style="background-image: url('resources/Yayoi_Kusama_Art.jpg');"></div>
+                <div class="card card003" style="background-image: url('resources/Yayoi_Kusama_Art_2.jpg');"></div>
             </div>
 
             <div class="cardContainer" onclick="window.location.href = 'slides/slide3'">
                 <div class="card card001">Slide 3</div>
                 <div class="card card002"></div>
                 <div class="card card003"></div>
-                <div class="card card004"></div>
             </div>
 
             <div class="cardContainer" onclick="window.location.href = 'slides/slide4'">
                 <div class="card card001">Slide 4</div>
                 <div class="card card002"></div>
                 <div class="card card003"></div>
-                <div class="card card004"></div>
             </div>
 
             <div class="cardContainer" onclick="window.location.href = 'slides/slide5'">
                 <div class="card card001">Slide 5</div>
                 <div class="card card002"></div>
                 <div class="card card003"></div>
-                <div class="card card004"></div>
             </div>
         </div>
+        <div class="row">
+            <button onclick="window.location.href='attributions/'">Attributions</button>
     </body>
 </html>
