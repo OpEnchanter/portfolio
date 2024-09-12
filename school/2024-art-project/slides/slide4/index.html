@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html {
+                overflow: all;
+                background: linear-gradient(to right, black, rgb(255, 204, 0), black);
+                width: 100%;
+                height: 100%;
+            }
+            body {
+                width: 100%;
+                height: 100%;
+                background-color: rgb(100, 100, 100);
+                border: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                font-family: sans-serif;
+                padding: 0px;
+                margin: 0px;
+            }
+
+            h3 {
+                color: rgb(199, 199, 199);
+                font-size: 35px;
+            }
+
+            p{
+                margin: 10px;
+                text-align: center;
+                color: rgb(199, 199, 199);
+                font-size: 24px;
+            }
+
+            button{
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                border-radius: 5px;
+                width: 135px;
+                height: 50px;
+                font-size: 25px;
+                border: none;
+                background-color: rgb(144, 144, 144);
+                transition-duration: 0.1s;
+            }
+
+            button:hover {
+                background-color: rgb(122, 122, 122);
+            }
+
+            .img1{
+                background-image: url("../../resources/art003.png");
+                border-radius: 5px;
+                background-size: cover;
+                position: absolute;
+                width: 300px;
+                aspect-ratio: 1/1;
+                top: 36%;
+                left: 15%;
+            }
+
+            .img2{
+                background-image: url("../../resources/art004.png");
+                border-radius: 5px;
+                background-size: cover;
+                position: absolute;
+                width: 233px;
+                aspect-ratio: 1/1;
+                top: 65%;
+                left: 82%;
+            }
+
+            .img3{
+                background-image: url("../../resources/art005.png");
+                border-radius: 5px;
+                background-size: cover;
+                position: absolute;
+                width: 275px;
+                aspect-ratio: 1/1;
+                top: 18%;
+                left: 64%;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Yayoi Kusama's Art (2)</h3>
+        <button onclick="window.location.href='../../'">Back</button>
+        <div class="img1"></div>
+        <div class="img2"></div>
+        <div class="img3"></div>
+    </body>
+</html>

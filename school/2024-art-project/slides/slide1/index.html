@@ -9,33 +9,52 @@
                 height: 100%;
             }
             body {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                width: 100%;
-                height: 100%;
-                padding: 0px;
-                margin: 0px;
-            }
-            .card {
                 width: 100%;
                 height: 100%;
                 background-color: rgb(100, 100, 100);
-                border-radius: 5px;
                 border: none;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
                 font-family: sans-serif;
+                padding: 0px;
+                margin: 0px;
+            }
+
+            h3 {
+                color: rgb(199, 199, 199);
+                font-size: 35px;
+            }
+
+            p{
+                margin: 10px;
+                text-align: center;
+                color: rgb(199, 199, 199);
+                font-size: 24px;
+            }
+
+            button{
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                border-radius: 5px;
+                width: 135px;
+                height: 50px;
+                font-size: 25px;
+                border: none;
+                background-color: rgb(144, 144, 144);
+                transition-duration: 0.1s;
+            }
+
+            button:hover {
+                background-color: rgb(122, 122, 122);
             }
         </style>
     </head>
     <body>
-         <div class="card">
-            <h3>Yayoi Kusama's Life</h3>
-            <p>Lorem ipsum</p>
-         </div>
+        <h3>Yayoi Kusama's Life</h3>
+        <p>Yayoi Kusama is a Japanese Woman born in March 22, 1929. When she was only a child, Kusama had suffered from constant hallucinations and potential schizophrenia. Being abused at a young age did not help at all. However, this would only fuel her creative interest. She would go on to enjoy painting, and after a small amount of training moved to the U.S. to pursue her career of painting and creating artwork. Unfortunately, by choice she eventually moved to a mental hospital where, at the age of 95 she continues to create artwork.</p>
+        <button onclick="window.location.href='../../'">Back</button>
     </body>
 </html>
