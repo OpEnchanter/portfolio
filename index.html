@@ -63,6 +63,32 @@
                 background-size: 400vw 400vh;
             }
 
+            .header::before {
+                content: '';
+                position: absolute;
+                height: 30px;
+                width: 100%;
+                top: 100vh;
+                left: 0px;
+                right: 0px;
+                bottom: 0px;
+                background: linear-gradient(to right, rgb(15, 15, 35), rgb(10, 10, 10));
+                z-index: -1;
+            }
+
+            .header::after {
+                content: '';
+                position: absolute;
+                height: 30px;
+                width: 100%;
+                top: 100vh;
+                left: 0px;
+                right: 0px;
+                bottom: 0px;
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(10, 10, 10, 1));
+                z-index: -1;
+            }
+
             .down {
                 width: 50px;
                 aspect-ratio: 1/1;
@@ -127,6 +153,13 @@
                 overflow: hidden;
 
                 display: flex;
+
+                transition-duration: 500ms;
+            }
+
+            .card:hover {
+                transform: translate(0px, -10px);
+                box-shadow: 0px 10px 10px rgb(15, 15, 15);
             }
 
             .card img{
@@ -183,12 +216,7 @@
                 <h1>Python Physics Engine</h1>
                 <div class="row">
                     <p>A simple 2D physics engine that includes, non-rotating rigidbodies, and constraints between rigidbodies.</p>
-                    <div class="links">
-                        <a href="https://github.com/OpEnchanter">GitHub<div class="ln"></div></a>
-                        <a href="https://openchanter.itch.io">Itch.io<div class="ln"></div></a>
-                    </div>
                 </div>
-                
             </div>
             <img src="renderer.png">
         </div>
@@ -238,6 +266,31 @@
             }
 
             setInterval(update_bg, 1)
+
+            function dist(x1, y1, x2, y2) {
+                return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+            }
+
+
+            const gr = 2000;
+
+
+            function update_header_gradient(){
+                var dstp0 = dist(bx, by, 0, window.innerHeight)
+                var dstp1 = dist(bx, by, window.innerWidth, window.innerHeight)
+
+                var stp0 = dstp0 / gr
+                var stp1 = dstp1 / gr
+
+                var stp0c = stp0 * 35 + 10
+                var stp1c = stp1 * 35 + 10
+
+                console.log(stp0c, stp1c)
+
+                header.style.setProperty("--before-background", `linear-gradient(to right, rgb(10, 10, ${stp0c}), rgb(10, 10, ${stp1c}))`)
+            }
+
+            setInterval(update_header_gradient, 1);
 
         </script>
     </body>
