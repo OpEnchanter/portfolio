@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tristan Greenhagen - Portfolio</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <style>
+            .up {
+              font-variation-settings:
+              'FILL' 0,
+              'wght' 400,
+              'GRAD' 0,
+              'opsz' 24
+            }
+            </style>
+        <style>
+            @font-face {
+                font-family: 'quicksand';
+                src: url('/quicksand.ttf') format('truetype');
+                /* You can specify additional font formats (e.g., woff, woff2) for better browser compatibility */
+            }
+            html{
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+                overflow-x: hidden;
+                font-family: 'quicksand', sans-serif;
+            }
+            body{
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100vh;
+                align-items: center;
+                text-align: center;
+
+                background-color: #000000;
+            }
+            .header{
+                width: 100%;
+                height: 500px;
+                margin: 0;
+                vertical-align: center;
+                background-color: #3d3d3d;
+                color: #c5c5c5;
+                align-content: center;
+                font-size: 50px;
+
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+            .header > p {
+                font-size: 17px;
+                padding: 20px;
+            }
+            .transition{
+                width:100%;
+                height: 100px;
+                background-color: #3d3d3d;
+                background-size: cover;
+            }
+            .main {
+                margin: 0 auto; /* Horizontally center align */
+                width: 100%;
+                height: 2000px;
+                background-color: #7c7c7c;
+                text-align: center; /* Optional: Center text within the centered content */
+                display: inline-block; /* or display: block; */
+            }
+
+            card{
+                width: 75%;
+                height: 225px;
+                background-color: #121212;
+                display: inline-block;
+                margin-top: 50px;
+                align-items: center;
+                padding: 1%;
+                border-radius: 10px;
+                color: #c5c5c5;
+
+                transition-duration: 0.5s;
+
+                box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.75);
+            }
+            card:hover{
+                transform: translateY(10px);
+                box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.75);
+            }
+            cardItem{
+                width: 200px;
+                height: 96%;
+                background-color: #ffffff;
+                border-radius: 5px;
+                background-size:cover;
+                display: flex;
+                z-index: 10;
+                float: left;
+                margin-top: 1%;
+                margin-bottom: 1%;
+            }
+            card > p {
+                margin-left: 10%;
+                padding: 10px;
+                display: inline-flexbox;
+                font-size: 15px;
+            }
+            card > a {
+                margin-left: 10px;
+                text-decoration: none;
+                color: #00bbff;
+                transition-duration: 0.5s;
+            }
+            card > a:hover{
+                color: #007099;
+            }
+            card > h3 {
+                margin-left: 10px;
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+            ::-webkit-scrollbar {
+                width: 10px; /* width of the scrollbar */
+                background-color: #3d3d3d;
+            }
+
+            /* Change scrollbar thumb */
+            ::-webkit-scrollbar-thumb {
+                background-color: #bcbcbc; /* color of the thumb */
+                border-radius: 2.5px; /* roundness of the thumb */
+            }
+
+            /* Change scrollbar track on hover */
+            ::-webkit-scrollbar-thumb:hover {
+                background-color: #555; /* color of the thumb on hover */
+            }
+            button {
+                border-radius: 3px;
+                border-style: none;
+                width: 15%;
+                height: 20px;
+                box-shadow: 0px 5px 0px rgba(0, 0, 0, 1);
+                transition-duration: 0.1s;
+                background-color: #c5c5c5;
+                font-family: 'quicksand', sans-serif;
+                margin: 10px;
+            }
+            button:hover{
+                transform: translateY(5px);
+                box-shadow: 0px 0px 0px rgba(0, 0, 0, 1);
+            }
+            nav{
+                width: 95%;
+                height: 50px;
+                align-items: center;
+                place-items: center;
+                justify-content: center;
+                background-color: #505050;
+                display: flex;
+                margin:2.5%;
+                border-radius: 10px;
+                overflow:hidden;
+            }
+            .top{
+                border-radius: 0.25rem;
+                width: 50px;
+                height: 50px;
+                position:fixed;
+                top: 92vh;
+                left: 1vh;
+                background-color: #555;
+
+                display: flex;
+
+                align-items: center;
+                place-items: center;
+                justify-content: center;
+                vertical-align: center;
+
+                transition-duration: 0.5s;
+
+                display: none; /* Hide initially */
+            }
+            .top:hover{
+                background-color: #2b2b2b;
+            }
+            .sect{
+                height: 200%;
+                width: 100%;
+                background-color: #505050;
+                border-width: 10px;
+                transition-duration: 0.5s;
+
+                align-items: center;
+                place-items: center;
+                justify-content: center;
+                vertical-align: center;
+                align-content: center;
+            }
+            .sect:hover{
+                background-color: rgb(114, 114, 114)
+            }
+            .sect > h3{
+                position: relative;
+                display:block;
+                font-size: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="scroll-to-top" class="top"><span style="pointer-events:none;" class="material-symbols-outlined">arrow_upward</span></div>
+        <div class="header">
+            <h3>Tristan Greenhagen - Portfolio</h3>
+            <p>Hi, my name is Tristan. I am profficient in the languages Python, Java, and C#. I have made several games using the Unity game engine with C#, I have completed projects for data management and physics simulation in Python, and I have created several Minecraft Plugins with Java. In addition to this experience I have also made a few websites using HTML, JavaScript, and CSS.</p>
+            <nav>
+                <div class="sect" onclick="window.location.href='https://github.com/OpEnchanter'">
+                    <h3>Github</h3>
+                </div>
+                <div class="sect" onclick="window.location.href='https://www.youtube.com/@openchanter'">
+                    <h3>YouTube</h3>
+                </div>
+                <div class="sect" onclick="window.location.href='https://openchanter.itch.io'">
+                    <h3>Itch.io</h3>
+                </div>
+                <div class="sect" onclick="window.location.href='./blog'">
+                    <h3>Blog</h3>
+                </div>
+            </nav>
+        </div>
+        <card>
+            <cardItem style="background-image: url('phys_eng.png');"></cardItem>
+            <h3>2D Pygame Physics Engine</h3>
+            <br style="margin: 10px">
+            <p>This is a 2D phyiscs engine that I wrote in python, it includes 2D box colliders, and some simple rigidbody physics including grabbing, and moving objects.</p>
+            <a href="https://github.com/OpEnchanter/python-phys-2.0"><strong>Link</strong></a>
+        </card>
+        <card>
+            <cardItem style="background-image: url('renderer.png');"></cardItem>
+            <h3>Particle Renderer - Minecraft Plugin</h3>
+            <br style="margin: 10px">
+            <p>This is a Minecraft Paper server plugin that adds some commands for drawing different shapes out of particles, using the added /draw command, this can be used in other projects by extracting the renderer.jar file.</p>
+            <a href="https://github.com/OpEnchanter/particle-rendering-lib-paper"><strong>Link</strong></a>
+        </card>
+        <card>
+            <cardItem style="background-image: url('renderer.png');"></cardItem>
+            <h3>WebChat - Website Messaging</h3>
+            <br style="margin: 10px">
+            <p>This is a website messaging service written in HTML, JS and CSS with a python backend.</p>
+            <a href="https://github.com/OpEnchanter/webchat"><strong>Link</strong></a>
+        </card>
+        <card>
+            <cardItem style="background-image: url('renderer.png');"></cardItem>
+            <h3>Physics Engine 3.0</h3>
+            <br style="margin: 10px">
+            <p>This is my third PyGame-Based physics engine, which has collisions, an options menu, and interactivity with physics objects.</p>
+            <a href="https://github.com/OpEnchanter/"><strong>Link</strong></a>
+        </card>
+        <script>
+            // Get the button element
+            var scrollToTopButton = document.getElementById('scroll-to-top');
+            
+            // Function to scroll to the top of the page
+            function scrollToTop() {
+              // Scroll to top smoothly
+              window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+              });
+            }
+            
+            // Show the button when user scrolls down
+            window.addEventListener('scroll', function() {
+              if (window.pageYOffset > 100) {
+                scrollToTopButton.style.display = 'flex';
+              } else {
+                scrollToTopButton.style.display = 'none';
+              }
+            });
+            
+            // Add click event listener to the button
+            scrollToTopButton.addEventListener('click', scrollToTop);
+          </script>
+    </body>
+</html>
