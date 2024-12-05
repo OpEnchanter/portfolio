@@ -42,6 +42,23 @@
                 margin: 5px;
             }
 
+            p {
+                font-family: 'quicksand';
+            }
+
+            .intro_text {
+                transform: translate(-175px, 25px);
+            }
+
+            .name {
+                font-size: 55px;
+            }
+
+            .about {
+                font-size: 15px;
+                transform: translate(0px, -15px);
+            }
+
             .header {
                 width: 100%;
 
@@ -54,7 +71,7 @@
                 color: white;
                 font-family: sans-serif;
 
-                height: 100vh;
+                height: calc(100vh + 30px);
 
                 background-color: var(--accent);
 
@@ -68,25 +85,12 @@
                 position: absolute;
                 height: 30px;
                 width: 100%;
-                top: 100vh;
+                top: calc(100vh);
                 left: 0px;
                 right: 0px;
                 bottom: 0px;
-                background: linear-gradient(to right, rgb(15, 15, 35), rgb(10, 10, 10));
-                z-index: -1;
-            }
-
-            .header::after {
-                content: '';
-                position: absolute;
-                height: 30px;
-                width: 100%;
-                top: 100vh;
-                left: 0px;
-                right: 0px;
-                bottom: 0px;
-                background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(10, 10, 10, 1));
-                z-index: -1;
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 0), var(--background));
+                z-index: 2;
             }
 
             .down {
@@ -125,6 +129,17 @@
                 font-family: 'quicksand';
 
                 margin: 5px;
+
+                background: rgba(155, 155, 155, 0.1);
+                padding-left: 5px;
+                padding-right: 5px;
+
+                padding-top: 2px;
+                padding-bottom: 2px;
+
+                border-radius: 3px;
+
+                transition-duration: 300ms;
             }
 
             .links a .ln {
@@ -140,7 +155,12 @@
                 width: 100%;
             }
 
+            .links a:hover {
+                background: none;
+            }
+
             .card {
+                position: relative;
                 width: 75%;
                 height: 300px;
                 background: var(--accent);
@@ -154,12 +174,16 @@
 
                 display: flex;
 
-                transition-duration: 500ms;
+                transition: transform 500ms ease, box-shadow 500ms ease;
+
+                z-index: 1;
+
+                box-shadow: 0px 0px 5px 0px rgba(155, 155, 255, 0.5);
             }
 
             .card:hover {
                 transform: translate(0px, -10px);
-                box-shadow: 0px 10px 10px rgb(15, 15, 15);
+                box-shadow: 0px 10px 20px 0px rgba(155, 155, 255, 0.5);
             }
 
             .card img{
@@ -191,12 +215,20 @@
             }
 
             .card .content p {
-                margin-left: 25px;
+                margin-left: 15px;
+            }
+
+            .card .content h1 {
+                margin-top: 15px;
             }
 
             .card .content .links {
-                position: absolute;
-                transform: translateY(185px);
+                background-color: rgba(0,0,0,0.1);
+                border-radius: 3px;
+            }
+
+            .card .content .links a {
+                background: none;
             }
 
             
@@ -204,7 +236,9 @@
     </head>
     <body>
         <div class="header" id="header">
-            <h1>Tristan Greenhagen</h1>
+            <p class="intro_text">Hello, my name is...</p>
+            <h1 class="name">Tristan Greenhagen</h1>
+            <p class="about">I make applications using Python, HTML, CSS, JavaScript, C# and Java.</p>
             <div class="links">
                 <a href="https://github.com/OpEnchanter">GitHub<div class="ln"></div></a>
                 <a href="https://openchanter.itch.io">Itch.io<div class="ln"></div></a>
@@ -213,9 +247,12 @@
         </div>
         <div class="card">
             <div class="content">
+                <div class="links">
+                    <a href="https://github.com/OpEnchanter">GitHub<div class="ln"></div></a>
+                </div>
                 <h1>Python Physics Engine</h1>
                 <div class="row">
-                    <p>A simple 2D physics engine that includes, non-rotating rigidbodies, and constraints between rigidbodies.</p>
+                    <p>A simple 2D physics engine that includes, non-rotating rigidbodies, rigidbody constraints and user interaction with objects.</p>
                 </div>
             </div>
             <img src="renderer.png">
@@ -266,31 +303,6 @@
             }
 
             setInterval(update_bg, 1)
-
-            function dist(x1, y1, x2, y2) {
-                return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-            }
-
-
-            const gr = 2000;
-
-
-            function update_header_gradient(){
-                var dstp0 = dist(bx, by, 0, window.innerHeight)
-                var dstp1 = dist(bx, by, window.innerWidth, window.innerHeight)
-
-                var stp0 = dstp0 / gr
-                var stp1 = dstp1 / gr
-
-                var stp0c = stp0 * 35 + 10
-                var stp1c = stp1 * 35 + 10
-
-                console.log(stp0c, stp1c)
-
-                header.style.setProperty("--before-background", `linear-gradient(to right, rgb(10, 10, ${stp0c}), rgb(10, 10, ${stp1c}))`)
-            }
-
-            setInterval(update_header_gradient, 1);
 
         </script>
     </body>
