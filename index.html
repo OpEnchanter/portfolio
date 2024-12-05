@@ -75,7 +75,7 @@
 
                 background-color: var(--accent);
 
-                background: radial-gradient(circle 2000px, rgb(15, 15, 45), rgb(10, 10, 10));
+                background: radial-gradient(circle 2000px, rgb(15, 15, 75), rgb(10, 10, 10));
                 background-repeat: no-repeat;
                 background-size: 400vw 400vh;
             }
@@ -183,7 +183,7 @@
 
             .card:hover {
                 transform: translate(0px, -10px);
-                box-shadow: 0px 10px 20px 0px rgba(155, 155, 255, 0.5);
+                box-shadow: 0px 10px 10px 0px rgba(155, 155, 255, 0.5);
             }
 
             .card img{
@@ -216,6 +216,7 @@
 
             .card .content p {
                 margin-left: 15px;
+                margin-right: 30px;
             }
 
             .card .content h1 {
@@ -223,7 +224,7 @@
             }
 
             .card .content .links {
-                background-color: rgba(0,0,0,0.1);
+                background-color: rgba(0,0,0,0.5);
                 border-radius: 3px;
             }
 
@@ -248,11 +249,35 @@
         <div class="card">
             <div class="content">
                 <div class="links">
-                    <a href="https://github.com/OpEnchanter">GitHub<div class="ln"></div></a>
+                    <a href="https://github.com/OpEnchanter/physics-engine-3.0">GitHub<div class="ln"></div></a>
                 </div>
                 <h1>Python Physics Engine</h1>
                 <div class="row">
                     <p>A simple 2D physics engine that includes, non-rotating rigidbodies, rigidbody constraints and user interaction with objects.</p>
+                </div>
+            </div>
+            <img src="phys_eng.png">
+        </div>
+        <div class="card">
+            <div class="content">
+                <div class="links">
+                    <a href="https://github.com/OpEnchanter/webchat">GitHub<div class="ln"></div></a>
+                </div>
+                <h1>Web Based Chat Service</h1>
+                <div class="row">
+                    <p>A simple web based chat service that includes, rooms with codes people can join, and rooms with customizable room codes that I developed with a friend.</p>
+                </div>
+            </div>
+            <img src="webchat.png">
+        </div>
+        <div class="card">
+            <div class="content">
+                <div class="links">
+                    <a href="https://github.com/OpEnchanter/particle-rendering-lib-paper">GitHub<div class="ln"></div></a>
+                </div>
+                <h1>Particle Renderer</h1>
+                <div class="row">
+                    <p>A Minecraft plugin that allows for drawing simple objects and lines with particles using the /draw command.</p>
                 </div>
             </div>
             <img src="renderer.png">
@@ -263,7 +288,7 @@
 
             down_button.addEventListener('click', function() {
                 window.scrollTo({
-                    top: window.innerHeight,
+                    top: window.innerHeight + 30,
                     behavior: 'smooth'
                 })
             })
