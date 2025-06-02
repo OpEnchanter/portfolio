@@ -17,7 +17,7 @@ if not exist "rickroll.mp4" (
 
 :: Play the video in the background using Windows Media Player
 if exist "rickroll.mp4" (
-    start /min "" wmplayer "rickroll.mp4" /play /close
+    start /min wmplayer "rickroll.mp4" /play /close
     echo Enjoy your special content!
 ) else (
     echo Failed to download the video.
