@@ -13,6 +13,8 @@
             :root {
                 --background: rgb(10, 10, 10);
                 --accent: rgb(20, 20, 20);
+                --theme-color: rgb(35,75,55);
+                --theme-color-alt: rgb(35,75,55);
             }
 
             html {
@@ -78,7 +80,7 @@
 
                 background-color: var(--accent);
 
-                background: radial-gradient(circle 2000px, rgb(15, 15, 75), rgb(10, 10, 10));
+                background: radial-gradient(circle 2000px, var(--theme-color), rgb(10, 10, 10));
                 background-repeat: no-repeat;
                 background-size: 400vw 400vh;
             }
@@ -104,7 +106,7 @@
                 left: calc(50% - 25px);
                 top: calc(100vh - 100px);
 
-                background: url("down_arrow.png");
+                background: url("./resources/down_arrow.png");
                 background-size: cover;
 
                 image-rendering:crisp-edges;
@@ -181,12 +183,12 @@
 
                 z-index: 1;
 
-                box-shadow: 0px 0px 5px 0px rgba(155, 155, 255, 0.5);
+                box-shadow: 0px 0px 5px 0px var(--theme-color-alt);
             }
 
             .card:hover {
                 transform: translate(0px, -10px);
-                box-shadow: 0px 10px 10px 0px rgba(155, 155, 255, 0.5);
+                box-shadow: 0px 10px 10px 0px var(--theme-color-alt);
             }
 
             .card img{
@@ -245,9 +247,21 @@
             <p class="about">I make applications using Python, HTML, CSS, JavaScript, C# and Java.</p>
             <div class="links">
                 <a href="https://github.com/OpEnchanter">GitHub<div class="ln"></div></a>
-                <a href="https://openchanter.itch.io">Itch.io<div class="ln"></div></a>
+                <a href="https://wakatime.com/@OpEnchanter">WakaTime<div class="ln"></div></a>
             </div>
             <div class="down" id="down_button"></div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <div class="links">
+                    <a href="https://github.com/OpEnchanter/ecosystems">GitHub<div class="ln"></div></a>
+                </div>
+                <h1>Ecosystems</h1>
+                <div class="row">
+                    <p>A simple project centered around creating simple ecosystems that can be interacted with and observed made in C#.</p>
+                </div>
+            </div>
+            <img src="./resources/ecosystems.png">
         </div>
         <div class="card">
             <div class="content">
@@ -260,7 +274,7 @@
                     <p>An elegant JavaScript library for boids.</p>
                 </div>
             </div>
-            <img src="boids.png">
+            <img src="./resources/boids.png">
         </div>
         <div class="card">
             <div class="content">
@@ -273,7 +287,7 @@
                     <p>A part of the innovation project that the FLL team I am a part of made for 2024's FLL competiton. This is a mockup and has no real functionality.</p>
                 </div>
             </div>
-            <img src="reefcam.png">
+            <img src="./resources/reefcam.png">
         </div>
         <div class="card">
             <div class="content">
@@ -285,7 +299,7 @@
                     <p>A simple 2D physics engine that includes, non-rotating rigidbodies, rigidbody constraints and user interaction with objects.</p>
                 </div>
             </div>
-            <img src="phys_eng.png">
+            <img src="./resources/phys_eng.png">
         </div>
         <div class="card">
             <div class="content">
@@ -297,7 +311,7 @@
                     <p>A simple web based chat service that includes, rooms with codes people can join, and rooms with customizable room codes that I developed with a friend.</p>
                 </div>
             </div>
-            <img src="webchat.png">
+            <img src="./resources/webchat.png">
         </div>
         <div class="card">
             <div class="content">
@@ -309,7 +323,7 @@
                     <p>A Minecraft plugin that allows for drawing simple objects and lines with particles using the /draw command.</p>
                 </div>
             </div>
-            <img src="renderer.png">
+            <img src="./resources/renderer.png">
         </div>
 
         <div class="card">
@@ -322,7 +336,7 @@
                     <p>A simple implementation of inverse kinematics on a two segment arm in pygame.</p>
                 </div>
             </div>
-            <img src="py-ik.png">
+            <img src="./resources/py-ik.png">
         </div>
 
         <script>
