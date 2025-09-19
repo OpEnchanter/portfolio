@@ -76,7 +76,7 @@
                 color: white;
                 font-family: sans-serif;
 
-                height: calc(100vh + 30px);
+                height: calc(100vh + 1000px);
 
                 background-color: var(--accent);
 
@@ -88,7 +88,7 @@
             .header::before {
                 content: '';
                 position: absolute;
-                height: 30px;
+                height: 1000px;
                 width: 100%;
                 top: calc(100vh);
                 left: 0px;
@@ -164,6 +164,18 @@
                 background: none;
             }
 
+            .header-content {
+                position:absolute;
+                top: 0px;
+                left: 0px;
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
             .card {
                 position: relative;
                 width: 75%;
@@ -237,106 +249,120 @@
                 background: none;
             }
 
+            .body-content {
+                position:absolute;
+                top: 100vh;
+                left: 0px;
+                width: 100vw;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                z-index: 1000;
+            }
+
             
         </style>
     </head>
     <body>
         <div class="header" id="header">
-            <p class="intro_text">Hello, my name is...</p>
-            <h1 class="name">Tristan Greenhagen</h1>
-            <p class="about">I make applications using Python, HTML, CSS, JavaScript, C# and Java.</p>
-            <div class="links">
-                <a href="https://github.com/OpEnchanter">GitHub<div class="ln"></div></a>
-                <a href="https://wakatime.com/@OpEnchanter">WakaTime<div class="ln"></div></a>
-            </div>
-            <div class="down" id="down_button"></div>
-        </div>
-        <div class="card">
-            <div class="content">
+            <div class="header-content">
+                <p class="intro_text">Hello, my name is...</p>
+                <h1 class="name">Tristan Greenhagen</h1>
+                <p class="about">I make applications using Python, HTML, CSS, JavaScript, C# and Java.</p>
                 <div class="links">
-                    <a href="https://github.com/OpEnchanter/ecosystems">GitHub<div class="ln"></div></a>
+                    <a href="https://github.com/OpEnchanter">GitHub<div class="ln"></div></a>
+                    <a href="https://wakatime.com/@OpEnchanter">WakaTime<div class="ln"></div></a>
                 </div>
-                <h1>Ecosystems</h1>
-                <div class="row">
-                    <p>A simple project centered around creating simple ecosystems that can be interacted with and observed made in C#.</p>
-                </div>
+                <div class="down" id="down_button"></div>
             </div>
-            <img src="./resources/ecosystems.png">
         </div>
-        <div class="card">
-            <div class="content">
-                <div class="links">
-                    <a href="https://github.com/OpEnchanter/boids.js">GitHub<div class="ln"></div></a>
-                    <a href="https://boids.tgreenhagen.com">Website<div class="ln"></div></a>
+        <div class="body-content">
+            <div class="card">
+                <div class="content">
+                    <div class="links">
+                        <a href="https://github.com/OpEnchanter/ecosystems">GitHub<div class="ln"></div></a>
+                    </div>
+                    <h1>Ecosystems</h1>
+                    <div class="row">
+                        <p>A simple project centered around creating simple ecosystems that can be interacted with and observed made in C#.</p>
+                    </div>
                 </div>
-                <h1>Boids.js</h1>
-                <div class="row">
-                    <p>An elegant JavaScript library for boids.</p>
-                </div>
+                <img src="./resources/ecosystems.png">
             </div>
-            <img src="./resources/boids.png">
-        </div>
-        <div class="card">
-            <div class="content">
-                <div class="links">
-                    <a href="https://github.com/OpEnchanter/fll-innovation-reefcam">GitHub<div class="ln"></div></a>
-                    <a href="https://roboctopi.tgreenhagen.com">Website<div class="ln"></div></a>
+            <div class="card">
+                <div class="content">
+                    <div class="links">
+                        <a href="https://github.com/OpEnchanter/boids.js">GitHub<div class="ln"></div></a>
+                        <a href="https://boids.tgreenhagen.com">Website<div class="ln"></div></a>
+                    </div>
+                    <h1>Boids.js</h1>
+                    <div class="row">
+                        <p>An elegant JavaScript library for boids.</p>
+                    </div>
                 </div>
-                <h1>FLL Reefcam</h1>
-                <div class="row">
-                    <p>A part of the innovation project that the FLL team I am a part of made for 2024's FLL competiton. This is a mockup and has no real functionality.</p>
-                </div>
+                <img src="./resources/boids.png">
             </div>
-            <img src="./resources/reefcam.png">
-        </div>
-        <div class="card">
-            <div class="content">
-                <div class="links">
-                    <a href="https://github.com/OpEnchanter/physics-engine-3.0">GitHub<div class="ln"></div></a>
+            <div class="card">
+                <div class="content">
+                    <div class="links">
+                        <a href="https://github.com/OpEnchanter/fll-innovation-reefcam">GitHub<div class="ln"></div></a>
+                        <a href="https://roboctopi.tgreenhagen.com">Website<div class="ln"></div></a>
+                    </div>
+                    <h1>FLL Reefcam</h1>
+                    <div class="row">
+                        <p>A part of the innovation project that the FLL team I am a part of made for 2024's FLL competiton. This is a mockup and has no real functionality.</p>
+                    </div>
                 </div>
-                <h1>Python Physics Engine</h1>
-                <div class="row">
-                    <p>A simple 2D physics engine that includes, non-rotating rigidbodies, rigidbody constraints and user interaction with objects.</p>
-                </div>
+                <img src="./resources/reefcam.png">
             </div>
-            <img src="./resources/phys_eng.png">
-        </div>
-        <div class="card">
-            <div class="content">
-                <div class="links">
-                    <a href="https://github.com/OpEnchanter/webchat">GitHub<div class="ln"></div></a>
+            <div class="card">
+                <div class="content">
+                    <div class="links">
+                        <a href="https://github.com/OpEnchanter/physics-engine-3.0">GitHub<div class="ln"></div></a>
+                    </div>
+                    <h1>Python Physics Engine</h1>
+                    <div class="row">
+                        <p>A simple 2D physics engine that includes, non-rotating rigidbodies, rigidbody constraints and user interaction with objects.</p>
+                    </div>
                 </div>
-                <h1>Web Based Chat Service</h1>
-                <div class="row">
-                    <p>A simple web based chat service that includes, rooms with codes people can join, and rooms with customizable room codes that I developed with a friend.</p>
-                </div>
+                <img src="./resources/phys_eng.png">
             </div>
-            <img src="./resources/webchat.png">
-        </div>
-        <div class="card">
-            <div class="content">
-                <div class="links">
-                    <a href="https://github.com/OpEnchanter/particle-rendering-lib-paper">GitHub<div class="ln"></div></a>
+            <div class="card">
+                <div class="content">
+                    <div class="links">
+                        <a href="https://github.com/OpEnchanter/webchat">GitHub<div class="ln"></div></a>
+                    </div>
+                    <h1>Web Based Chat Service</h1>
+                    <div class="row">
+                        <p>A simple web based chat service that includes, rooms with codes people can join, and rooms with customizable room codes that I developed with a friend.</p>
+                    </div>
                 </div>
-                <h1>Minecraft Particle Renderer</h1>
-                <div class="row">
-                    <p>A Minecraft plugin that allows for drawing simple objects and lines with particles using the /draw command.</p>
-                </div>
+                <img src="./resources/webchat.png">
             </div>
-            <img src="./resources/renderer.png">
-        </div>
-
-        <div class="card">
-            <div class="content">
-                <div class="links">
-                    <a href="https://github.com/OpEnchanter/py-ik">GitHub<div class="ln"></div></a>
+            <div class="card">
+                <div class="content">
+                    <div class="links">
+                        <a href="https://github.com/OpEnchanter/particle-rendering-lib-paper">GitHub<div class="ln"></div></a>
+                    </div>
+                    <h1>Minecraft Particle Renderer</h1>
+                    <div class="row">
+                        <p>A Minecraft plugin that allows for drawing simple objects and lines with particles using the /draw command.</p>
+                    </div>
                 </div>
-                <h1>Python Inverse Kinematics</h1>
-                <div class="row">
-                    <p>A simple implementation of inverse kinematics on a two segment arm in pygame.</p>
-                </div>
+                <img src="./resources/renderer.png">
             </div>
-            <img src="./resources/py-ik.png">
+            <div class="card">
+                <div class="content">
+                    <div class="links">
+                        <a href="https://github.com/OpEnchanter/py-ik">GitHub<div class="ln"></div></a>
+                    </div>
+                    <h1>Python Inverse Kinematics</h1>
+                    <div class="row">
+                        <p>A simple implementation of inverse kinematics on a two segment arm in pygame.</p>
+                    </div>
+                </div>
+                <img src="./resources/py-ik.png">
+            </div>
         </div>
 
         <script>
@@ -380,7 +406,7 @@
                 vy*=0.99;
 
                 header.style.backgroundPositionX = `${bx-window.innerWidth*2}px`;
-                header.style.backgroundPositionY = `${by-window.innerHeight*2}px`;
+                header.style.backgroundPositionY = `${by-window.innerHeight*2+window.scrollY}px`;
             }
 
             setInterval(update_bg, 1)
