@@ -4,265 +4,7 @@
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8584821565542895"
      crossorigin="anonymous"></script>
         <title>Tristan Greenhagen - Portfolio</title>
-        <style>
-            @font-face {
-                font-family: 'quicksand';
-                src: url("quicksand.ttf");
-            }
-
-            :root {
-                --background: rgb(10, 10, 10);
-                --accent: rgb(20, 20, 20);
-                --theme-color: rgb(35,75,55);
-                --theme-color-alt: rgb(35,75,55);
-                --fade-length: 1000px;
-            }
-
-            html {
-                padding: 0px;
-                margin: 0px;
-            }
-
-            ::-webkit-scrollbar {
-                display: none;
-            }
-
-            body {
-                padding: 0px;
-                margin: 0px;
-                background: var(--background);
-
-                display: flex;
-                flex-direction: column;
-
-                align-items: center;
-                justify-content: start;
-
-                font-family: 'quicksand';
-            }
-
-            h1 {
-                font-family: 'quicksand';
-
-                padding: 0px;
-                margin: 5px;
-            }
-
-            p {
-                font-family: 'quicksand';
-            }
-
-            .intro_text {
-                transform: translate(-175px, 25px);
-            }
-
-            .name {
-                font-size: 55px;
-            }
-
-            .about {
-                font-size: 15px;
-                transform: translate(0px, -15px);
-            }
-
-            .header {
-                width: 100%;
-
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                flex-direction: column;
-
-                color: white;
-                font-family: sans-serif;
-
-                height: calc(100vh + var(--fade-length));
-
-                background-color: var(--background);
-
-                background: radial-gradient(circle 2000px, var(--theme-color), var(--background));
-                background-repeat: no-repeat;
-                background-size: 400vw 400vh;
-            }
-
-            .header::before {
-                content: '';
-                position: absolute;
-                height: var(--fade-length);
-                width: 100%;
-                top: calc(100vh);
-                left: 0px;
-                right: 0px;
-                bottom: 0px;
-                background: linear-gradient(to bottom, rgba(0, 0, 0, 0), var(--background));
-                z-index: 2;
-            }
-
-            .down {
-                width: 50px;
-                aspect-ratio: 1/1;
-
-                position: absolute;
-                left: calc(50% - 25px);
-                top: calc(100vh - 100px);
-
-                background: url("./resources/down_arrow.png");
-                background-size: cover;
-
-                image-rendering:crisp-edges;
-
-                transition-duration: 150ms;
-
-                border-radius: 1rem;
-            }
-
-            .down:hover {
-                transform: scale(1.1);
-                cursor: pointer;
-            }
-
-            .links {
-                display: flex;
-                flex-direction: row;
-            }
-
-            .links a {
-                transition-duration: 150ms;
-                text-decoration: none;
-                color: white;
-
-                font-family: 'quicksand';
-
-                margin: 5px;
-
-                background: rgba(155, 155, 155, 0.1);
-                padding-left: 5px;
-                padding-right: 5px;
-
-                padding-top: 2px;
-                padding-bottom: 2px;
-
-                border-radius: 3px;
-
-                transition-duration: 300ms;
-            }
-
-            .links a .ln {
-                width: 0%;
-                background: white;
-                height: 1px;
-                transition-duration: 150ms;
-                border-radius: 1rem;
-            }
-
-            .links a:hover .ln{
-                text-decoration: underline;
-                width: 100%;
-            }
-
-            .links a:hover {
-                background: none;
-            }
-
-            .header-content {
-                position:absolute;
-                top: 0px;
-                left: 0px;
-                width: 100vw;
-                height: 100vh;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .card {
-                position: relative;
-                width: 75%;
-                height: 300px;
-                background: var(--accent);
-
-                border-radius: 12px;
-                border: none;
-
-                margin: 50px;
-
-                overflow: hidden;
-
-                display: flex;
-
-                transition: transform 500ms ease, box-shadow 500ms ease;
-
-                z-index: 1;
-
-                box-shadow: 0px 0px 5px 0px var(--theme-color-alt);
-            }
-
-            .card:hover {
-                transform: translate(0px, -10px);
-                box-shadow: 0px 10px 10px 0px var(--theme-color-alt);
-            }
-
-            .card img{
-                float: right;
-
-                width: 300px;
-                height: 300px;
-
-                object-fit: cover;
-
-                position:static;
-            }
-
-            .card .content {
-                padding: 10px;
-                width: calc(100% - 300px);
-
-                color: white;
-
-                display: flex;
-                flex-direction: column;
-            }
-
-            .card .content .row {
-                display: flex;
-                flex-direction: row;
-
-                align-items: center;
-            }
-
-            .card .content p {
-                margin-left: 15px;
-                margin-right: 30px;
-            }
-
-            .card .content h1 {
-                margin-top: 15px;
-            }
-
-            .card .content .links {
-                background-color: rgba(0,0,0,0.5);
-                border-radius: 8px;
-            }
-
-            .card .content .links a {
-                background: none;
-            }
-
-            .body-content {
-                position:absolute;
-                top: 100vh;
-                left: 0px;
-                width: 100vw;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                z-index: 1000;
-            }
-
-            
-        </style>
+        <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
         <div class="header" id="header">
@@ -271,8 +13,9 @@
                 <h1 class="name">Tristan Greenhagen</h1>
                 <p class="about">I make applications using Python, HTML, CSS, JavaScript, C# and Java.</p>
                 <div class="links">
-                    <a href="https://github.com/OpEnchanter">GitHub<div class="ln"></div></a>
-                    <a href="https://wakatime.com/@OpEnchanter">WakaTime<div class="ln"></div></a>
+                    <a href="https://github.com/OpEnchanter" class="gh">GitHub</a>
+                    <a href="https://wakatime.com/@OpEnchanter">WakaTime</a>
+                    <a href="https://stats.fm/owofox" class="sfm">Stats.fm</a>
                 </div>
                 <div class="down" id="down_button"></div>
             </div>
@@ -306,19 +49,6 @@
             <div class="card">
                 <div class="content">
                     <div class="links">
-                        <a href="https://github.com/OpEnchanter/fll-innovation-reefcam">GitHub<div class="ln"></div></a>
-                        <a href="https://roboctopi.tgreenhagen.com">Website<div class="ln"></div></a>
-                    </div>
-                    <h1>FLL Reefcam</h1>
-                    <div class="row">
-                        <p>A part of the innovation project that the FLL team I am a part of made for 2024's FLL competiton. This is a mockup and has no real functionality.</p>
-                    </div>
-                </div>
-                <img src="./resources/reefcam.png">
-            </div>
-            <div class="card">
-                <div class="content">
-                    <div class="links">
                         <a href="https://github.com/OpEnchanter/physics-engine-3.0">GitHub<div class="ln"></div></a>
                     </div>
                     <h1>Python Physics Engine</h1>
@@ -327,18 +57,6 @@
                     </div>
                 </div>
                 <img src="./resources/phys_eng.png">
-            </div>
-            <div class="card">
-                <div class="content">
-                    <div class="links">
-                        <a href="https://github.com/OpEnchanter/webchat">GitHub<div class="ln"></div></a>
-                    </div>
-                    <h1>Web Based Chat Service</h1>
-                    <div class="row">
-                        <p>A simple web based chat service that includes, rooms with codes people can join, and rooms with customizable room codes that I developed with a friend.</p>
-                    </div>
-                </div>
-                <img src="./resources/webchat.png">
             </div>
             <div class="card">
                 <div class="content">
@@ -364,8 +82,13 @@
                 </div>
                 <img src="./resources/py-ik.png">
             </div>
-        </div>
 
+            <div class="footer">
+                <strong>The Forgotten Projects</strong>
+                <a href="/hoverfx">HoverFX</a>
+                <a href="https://github.com/OpEnchanter/webchat">Web Chat</a>
+                <a href="https://github.com/OpEnchanter/fll-innovation-reefcam">FLL Innovation (Reefcam)</a>
+            </div>
         <script>
             const down_button = document.getElementById("down_button");
 
