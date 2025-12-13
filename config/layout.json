@@ -1,0 +1,63 @@
+{
+	"page": [
+		{
+			"title": "Ecosystems",
+			"description": "A project about creating simple ecosystems, that can be interacted with and viewed in a 3D world. Made with C#.",
+			"links": [
+				{
+					"name": "GitHub",
+					"target": "https://github.com/OpEnchanter/ecosystems"
+				}
+			],
+			"thumbnail": "/thumb/ecosystems.png"
+		},
+		{
+			"title": "boids.js",
+			"description": "A Javascript, web project centered around creating boids!",
+			"links": [
+				{
+					"name": "GitHub",
+					"target": "https://github.com/OpEnchanter/boids.js"
+				},
+				{
+					"name": "Website",
+					"target": "https://boids.tgreenhagen.com/"
+				}
+			],
+			"thumbnail": "/thumb/boids.png"
+		},
+		{
+			"title": "Python Physics Engine",
+			"description": "An extremely simple Python project for simple physics.",
+			"links": [
+				{
+					"name": "GitHub",
+					"target": "https://github.com/OpEnchanter/physics-engine-3.0"
+				}
+			],
+			"thumbnail": "/thumb/phys_eng.png"
+		},
+		{
+			"title": "Particle Renderer",
+			"description": "A Minecraft plugin that allows the user to draw shapes with particles using the /draw command!",
+			"links": [
+				{
+					"name": "GitHub",
+					"target": "https://github.com/OpEnchanter/particle-rendering-lib-paper"
+				}
+			],
+			"thumbnail": "/thumb/renderer.png"
+		},
+		{
+			"title": "Inverse Kinematics",
+			"description": "A simple 2 segment inverse kinematics solver made in python.",
+			"links": [
+				{
+					"name": "GitHub",
+					"target": "https://github.com/OpEnchanter/py-ik"
+				}
+			],
+			"thumbnail": "/thumb/py-ik.png"
+		}
+	]
+}
