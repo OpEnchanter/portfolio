@@ -20,76 +20,78 @@
                 <div class="down" id="down_button"></div>
             </div>
         </div>
-        <div class="body-content">
-            <div class="card">
-                <div class="content">
-                    <div class="links">
-                        <a href="https://github.com/OpEnchanter/ecosystems">GitHub<div class="ln"></div></a>
-                    </div>
-                    <h1>Ecosystems</h1>
-                    <div class="row">
-                        <p>A simple project centered around creating simple ecosystems that can be interacted with and observed made in C#.</p>
-                    </div>
-                </div>
-                <img src="./thumb/ecosystems.png">
-            </div>
-            <div class="card">
-                <div class="content">
-                    <div class="links">
-                        <a href="https://github.com/OpEnchanter/boids.js">GitHub<div class="ln"></div></a>
-                        <a href="https://boids.tgreenhagen.com">Website<div class="ln"></div></a>
-                    </div>
-                    <h1>Boids.js</h1>
-                    <div class="row">
-                        <p>An elegant JavaScript library for boids.</p>
-                    </div>
-                </div>
-                <img src="./thumb/boids.png">
-            </div>
-            <div class="card">
-                <div class="content">
-                    <div class="links">
-                        <a href="https://github.com/OpEnchanter/physics-engine-3.0">GitHub<div class="ln"></div></a>
-                    </div>
-                    <h1>Python Physics Engine</h1>
-                    <div class="row">
-                        <p>A simple 2D physics engine that includes, non-rotating rigidbodies, rigidbody constraints and user interaction with objects.</p>
-                    </div>
-                </div>
-                <img src="./thumb/phys_eng.png">
-            </div>
-            <div class="card">
-                <div class="content">
-                    <div class="links">
-                        <a href="https://github.com/OpEnchanter/particle-rendering-lib-paper">GitHub<div class="ln"></div></a>
-                    </div>
-                    <h1>Minecraft Particle Renderer</h1>
-                    <div class="row">
-                        <p>A Minecraft plugin that allows for drawing simple objects and lines with particles using the /draw command.</p>
-                    </div>
-                </div>
-                <img src="./thumb/renderer.png">
-            </div>
-            <div class="card">
-                <div class="content">
-                    <div class="links">
-                        <a href="https://github.com/OpEnchanter/py-ik">GitHub<div class="ln"></div></a>
-                    </div>
-                    <h1>Python Inverse Kinematics</h1>
-                    <div class="row">
-                        <p>A simple, Python implementation of a 2 segment inverse kinematics algorithm.</p>
-                    </div>
-                </div>
-                <img src="./thumb/py-ik.png">
-            </div>
-
-            <div class="footer">
-                <strong>The Forgotten Projects</strong>
-                <a href="/hoverfx">HoverFX</a>
-                <a href="https://github.com/OpEnchanter/webchat">Web Chat</a>
-                <a href="https://github.com/OpEnchanter/fll-innovation-reefcam">FLL Innovation (Reefcam)</a>
-            </div>
+		<div class="body-content"></div>
         <script>
+			// Dynamic page loading
+			async function pageLoader() {
+				fetch("/api/layout")
+					.then((res) => { 
+						return res.json(); 
+					})
+					.then((data) => { 
+						console.log(data); 
+						return data.page;
+					})
+					.then((page) => {
+						page.forEach((elem) => {
+							// Create card
+							card = document.createElement("div");
+							card.className = "card";
+
+							{
+								content = document.createElement("div");
+								content.className = "content";
+
+								{
+									links = document.createElement("div");
+									links.className = "links";
+
+									{
+										elem.links.forEach((link) => {
+											linkElem = document.createElement("a");
+											linkElem.innerText = link.name;
+											linkElem.href = link.target;
+											links.appendChild(linkElem);
+										});
+									}
+
+									content.appendChild(links);
+
+									title = document.createElement("h1");
+									title.innerText = elem.title;
+
+									content.appendChild(title);
+
+									description = document.createElement("div");
+									description.className = "row";
+
+									{
+										text = document.createElement("p");
+										text.innerText = elem.description;
+
+										description.appendChild(text);
+									}
+
+									content.appendChild(description);
+
+								}
+
+								card.appendChild(content);
+
+								thumbnail = document.createElement("img");
+								thumbnail.src = elem.thumbnail;
+
+								card.appendChild(thumbnail);
+							}
+
+							document.querySelector(".body-content").appendChild(card);
+						});
+					});
+			}
+
+			pageLoader();
+
+			// Website functionality
             const down_button = document.getElementById("down_button");
 
             down_button.addEventListener('click', function() {
