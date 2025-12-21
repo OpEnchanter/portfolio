@@ -1,0 +1,14 @@
+{
+  "name": "tghagen",
+  "version": "1.0.0",
+  "created": "2025-12-21T14:00:00Z",
+  "dockerfile": "Dockerfile",
+  "arch": "amd64",
+  "maintainer": "Tristan Greenhagen",
+  "source": "https://github.com/{owner}/{repo}",
+  "labels": {
+    "org.opencontainers.image.description": "Portfolio website"
+  },
+  "git_commit": "um commit?",
+  "docker_tags": ["latest", "1.0.0"]
+}
