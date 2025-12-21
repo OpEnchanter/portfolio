@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8584821565542895"
+     crossorigin="anonymous"></script>
+        <title>Tristan Greenhagen - Portfolio</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="header" id="header">
+            <div class="header-content">
+                <p class="intro_text">Hello, my name is...</p>
+                <h1 class="name">Tristan Greenhagen</h1>
+                <p class="about">I make applications using Python, HTML, CSS, JavaScript, C# and Java.</p>
+                <div class="links">
+                    <a href="https://github.com/OpEnchanter" class="gh">GitHub</a>
+                    <a href="https://wakatime.com/@OpEnchanter">WakaTime</a>
+                    <a href="https://stats.fm/owofox" class="sfm">Stats.fm</a>
+                </div>
+                <div class="down" id="down_button"></div>
+            </div>
+        </div>
+		<div class="body-content"></div>
+        <script>
+			// Dynamic page loading
+			async function pageLoader() {
+				fetch("/api/layout")
+					.then((res) => { 
+						return res.json(); 
+					})
+					.then((data) => { 
+						console.log(data); 
+						return data.page;
+					})
+					.then((page) => {
+						page.forEach((elem) => {
+							// Create card
+							card = document.createElement("div");
+							card.className = "card";
+
+							{
+								content = document.createElement("div");
+								content.className = "content";
+
+								{
+									links = document.createElement("div");
+									links.className = "links";
+
+									{
+										elem.links.forEach((link) => {
+											linkElem = document.createElement("a");
+											linkElem.innerText = link.name;
+											linkElem.href = link.target;
+											links.appendChild(linkElem);
+										});
+									}
+
+									content.appendChild(links);
+
+									title = document.createElement("h1");
+									title.innerText = elem.title;
+
+									content.appendChild(title);
+
+									description = document.createElement("div");
+									description.className = "row";
+
+									{
+										text = document.createElement("p");
+										text.innerText = elem.description;
+
+										description.appendChild(text);
+									}
+
+									content.appendChild(description);
+
+								}
+
+								card.appendChild(content);
+
+								thumbnail = document.createElement("img");
+								thumbnail.src = elem.thumbnail;
+
+								card.appendChild(thumbnail);
+							}
+
+							document.querySelector(".body-content").appendChild(card);
+						});
+					});
+			}
+
+			pageLoader();
+
+			// Website functionality
+            const down_button = document.getElementById("down_button");
+
+            down_button.addEventListener('click', function() {
+                window.scrollTo({
+                    top: window.innerHeight + 30,
+                    behavior: 'smooth'
+                })
+            })
+
+            const header = document.getElementById("header");
+
+            var vx = 0;
+            var vy = 0;
+
+            var bx = 0;
+            var by = 0;
+
+            var mx = 0;
+            var my = 0;
+
+            window.addEventListener('mousemove', function(e) {
+
+                vx += (e.clientX - mx) * 0.01;
+                vy += (e.clientY - my) * 0.01;
+
+                mx = e.clientX;
+                my = e.clientY;
+            });
+
+            function update_bg() {
+                bx += vx;
+                by += vy;
+
+                bx = bx % window.innerWidth;
+                by = by % window.innerHeight;
+
+                vx*=0.99;
+                vy*=0.99;
+
+                header.style.backgroundPositionX = `${bx-window.innerWidth*2}px`;
+                header.style.backgroundPositionY = `${by-window.innerHeight*2+window.scrollY}px`;
+            }
+
+            setInterval(update_bg, 1)
+
+        </script>
+    </body>
+</html>

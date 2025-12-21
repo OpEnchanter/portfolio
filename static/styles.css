@@ -100,7 +100,7 @@ p {
     left: calc(50% - 25px);
     top: calc(100vh - 100px);
 
-    background: url("./resources/down_arrow.png");
+    background: url("/down_arrow.png");
     background-size: cover;
 
     image-rendering:crisp-edges;
