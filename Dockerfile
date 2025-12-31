@@ -1,32 +1,37 @@
-# syntax=docker/dockerfile:1
-
-# Stage 1: Base image
+# use the official Bun image
+# see all versions at https://hub.docker.com/r/oven/bun/tags
 FROM oven/bun:1 AS base
 WORKDIR /usr/src/app
 
-# Stage 2: Install dependencies (dev)
+# install dependencies into temp directory
+# this will cache them and speed up future builds
 FROM base AS install
 RUN mkdir -p /temp/dev
 COPY package.json bun.lock /temp/dev/
 RUN cd /temp/dev && bun install --frozen-lockfile
 
-# Stage 3: Install dependencies (production)
-FROM base AS prod_deps
+# install with --production (exclude devDependencies)
 RUN mkdir -p /temp/prod
 COPY package.json bun.lock /temp/prod/
 RUN cd /temp/prod && bun install --frozen-lockfile --production
 
-# Stage 4: Prerelease - Copy everything and install dev dependencies
+# copy node_modules from temp directory
+# then copy all (non-ignored) project files into the image
 FROM base AS prerelease
-COPY --from=install /temp/dev/node_modules ./node_modules
+COPY --from=install /temp/dev/node_modules node_modules
 COPY . .
 
-# Stage 5: Release - Only copy production deps and app code
+# [optional] tests & build
+ENV NODE_ENV=production
+RUN bun test
+RUN bun run build
+
+# copy production dependencies and source code into final image
 FROM base AS release
-WORKDIR /usr/src/app
-COPY --from=prod_deps /temp/prod/node_modules ./node_modules
+COPY --from=install /temp/prod/node_modules node_modules
 COPY --from=prerelease /usr/src/app/. .
 
+# run the app
 USER bun
-EXPOSE 3000
-ENTRYPOINT [ "bun", "index.ts" ]
+EXPOSE 3000/tcp
+ENTRYPOINT [ "bun", "run", "index.ts" ]
