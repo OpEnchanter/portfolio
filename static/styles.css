@@ -88,7 +88,7 @@ p {
     height: calc(100vh + var(--fade-length));
     position: absolute;
     top: 0; left: 0;
-    background: radial-gradient(circle 2000px, var(--theme-color), var(--background));
+    background: radial-gradient(circle 95vw, var(--theme-color), var(--background));
     background-repeat: no-repeat;
     background-size: 400vw 400vh;
 
@@ -231,11 +231,13 @@ p {
 
     --shadow-offset-x: 0;
     --shadow-offset-y: 0;
+
+    transition: 95ms linear;
 }
 
 .card:hover {
-    transform: translate(0px, -25px) rotate3d(var(--card-rotation-y), var(--card-rotation-x), 0, 13deg);
-    box-shadow: var(--shadow-offset-x) calc(15px + var(--shadow-offset-y)) 30px 0px var(--theme-color-alt-dim);
+    transform: translate(0px, 0px) rotate3d(var(--card-rotation-y), var(--card-rotation-x), 0, 13deg);
+    box-shadow: var(--shadow-offset-x) calc(0px + var(--shadow-offset-y)) 30px 0px var(--theme-color-alt-dim);
 }
 
 .card img{
@@ -293,7 +295,7 @@ p {
     flex-direction: column;
     align-items: center;
     z-index: 1000;
-    perspective: 5000px;
+    perspective: 6000px;
 }
 
 .footer {
