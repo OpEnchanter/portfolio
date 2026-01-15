@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
 
-const port = 8080;
+const port = 8042;
 
 const app = express();
 app.use(express.static(path.join(__dirname, "static")));
