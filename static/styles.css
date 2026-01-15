@@ -9,6 +9,8 @@
     --theme-color: rgb(35,75,55);
     --theme-color-alt: rgb(35,75,55);
     --fade-length: 1000px;
+    --bg-dot-size: 1px;
+    --bg-dot-spacing: 16px;
 }
 
 html {
@@ -74,12 +76,29 @@ p {
 
     background-color: var(--background);
 
+    --bgBlurPosX: 0px;
+    --bgBlurPosY: 0px;
+}
+
+
+.header::before {
+    content: '';
+    width: 100%;
+    height: calc(100vh + var(--fade-length));
+    position: absolute;
+    top: 0; left: 0;
     background: radial-gradient(circle 2000px, var(--theme-color), var(--background));
     background-repeat: no-repeat;
     background-size: 400vw 400vh;
+
+    background-position: var(--bgBlurPosX) var(--bgBlurPosY);
+
+    mask-image: radial-gradient(circle at center, #fff var(--bg-dot-size), transparent var(--bg-dot-size));
+
+    mask-size: var(--bg-dot-spacing) var(--bg-dot-spacing);
 }
 
-.header::before {
+.header::after {
     content: '';
     position: absolute;
     height: var(--fade-length);

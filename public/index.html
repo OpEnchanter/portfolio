@@ -11,7 +11,7 @@
             <div class="header-content">
                 <p class="intro_text">Hello, my name is...</p>
                 <h1 class="name">Tristan Greenhagen</h1>
-                <p class="about">I make applications using Python, HTML, CSS, JavaScript, C# and Java.</p>
+                <p class="about">I make applications using everything from Python and Javascript to Java and C++.</p>
                 <div class="links">
                     <a href="https://github.com/OpEnchanter" class="gh">GitHub</a>
                     <a href="https://wakatime.com/@OpEnchanter">WakaTime</a>
@@ -131,8 +131,12 @@
                 vx*=0.99;
                 vy*=0.99;
 
-                header.style.backgroundPositionX = `${bx-window.innerWidth*2}px`;
-                header.style.backgroundPositionY = `${by-window.innerHeight*2+window.scrollY}px`;
+                header.style.setProperty('--bgBlurPosX', `${bx-window.innerWidth*2}px`);
+                header.style.setProperty('--bgBlurPosY', `${by-window.innerHeight*2+window.scrollY}px`);
+                
+
+                // header.style.backgroundPositionX = `${bx-window.innerWidth*2}px`;
+                // header.style.backgroundPositionY = `${by-window.innerHeight*2+window.scrollY}px`;
             }
 
             setInterval(update_bg, 1)
