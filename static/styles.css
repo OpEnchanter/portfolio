@@ -112,6 +112,12 @@ p {
     z-index: 2;
 }
 
+.chips {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
 .down {
     width: 50px;
     aspect-ratio: 1/1;
@@ -294,7 +300,7 @@ p {
     background: none;
 }
 
-.card .content .links .chip {
+.chip {
     display: flex;
     height: 20px;
     border-radius: 1rem;
