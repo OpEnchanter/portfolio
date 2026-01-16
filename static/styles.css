@@ -35,6 +35,8 @@ body {
     justify-content: start;
 
     font-family: 'quicksand';
+
+    overflow-x: hidden;
 }
 
 h1 {
@@ -237,7 +239,14 @@ p {
 
 .card:hover {
     transform: scale(1.05) rotateX(var(--card-rotation-y)) rotateY(var(--card-rotation-x));
-    box-shadow: var(--shadow-offset-x) calc(0px + var(--shadow-offset-y)) 20px 0px var(--theme-color-alt-dim);
+    box-shadow: var(--shadow-offset-x) calc(0px + var(--shadow-offset-y)) 30px 0px var(--theme-color-alt-dim);
+}
+
+@media (hover: none) {
+    .card:hover {
+        transform: scale(1) rotateX(0deg) rotateY(0deg);
+        box-shadow: none;
+    }
 }
 
 .card img{
@@ -279,11 +288,23 @@ p {
 
 .card .content .links {
     background-color: rgba(0,0,0,0.5);
+    align-items: center;
     border-radius: 8px;
 }
 
 .card .content .links a {
     background: none;
+}
+
+.card .content .links .chip {
+    display: flex;
+    height: 20px;
+    border-radius: 1rem;
+    background-color: red;
+    margin: 0px;
+    margin-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .body-content {

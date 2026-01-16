@@ -46,22 +46,25 @@
 							// Create card
 							let card = document.createElement("div");
 							card.className = "card";
+                            
+                            if (!navigator.userAgentData.mobile) {
+                                let rect;
 
-                            let rect;
+                                card.addEventListener('mouseenter', () => {
+                                    // Calculate the bounding box once upon entry
+                                    rect = card.getBoundingClientRect(); 
+                                });
 
-                            card.addEventListener('mouseenter', () => {
-                                // Calculate the bounding box once upon entry
-                                rect = card.getBoundingClientRect(); 
-                            });
-
-                            card.addEventListener('mousemove', (e) => {
-                                let mouseDiffNormalizedX = (e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
-                                let mouseDiffNormalizedY = ((rect.top + rect.height / 2) - e.clientY) / (rect.height / 2);
-                                card.style.setProperty("--card-rotation-x", `${mouseDiffNormalizedX*15}deg`);
-                                card.style.setProperty("--card-rotation-y", `${mouseDiffNormalizedY*15}deg`);
-                                card.style.setProperty("--shadow-offset-x", `${mouseDiffNormalizedX * -15}px`);
-                                card.style.setProperty("--shadow-offset-y", `${mouseDiffNormalizedY * 15}px`);
-                            });
+                                card.addEventListener('mousemove', (e) => {
+                                    let mouseDiffNormalizedX = (e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
+                                    let mouseDiffNormalizedY = ((rect.top + rect.height / 2) - e.clientY) / (rect.height / 2);
+                                    card.style.setProperty("--card-rotation-x", `${mouseDiffNormalizedX*15}deg`);
+                                    card.style.setProperty("--card-rotation-y", `${mouseDiffNormalizedY*15}deg`);
+                                    card.style.setProperty("--shadow-offset-x", `${mouseDiffNormalizedX * -15}px`);
+                                    card.style.setProperty("--shadow-offset-y", `${mouseDiffNormalizedY * 15}px`);
+                                });
+                            }
+                            
 
 							{
 								content = document.createElement("div");
@@ -77,6 +80,14 @@
 											linkElem.innerText = link.name;
 											linkElem.href = link.target;
 											links.appendChild(linkElem);
+										});
+
+                                        elem.chips.forEach((chip) => {
+											chipElem = document.createElement("div");
+                                            chipElem.className = "chip";
+											chipElem.innerText = chip.text;
+                                            chipElem.style.backgroundColor = chip.color;
+											links.appendChild(chipElem);
 										});
 									}
 
@@ -149,6 +160,16 @@
 
                 header.style.setProperty('--bgBlurPosX', `${bx-window.innerWidth*2}px`);
                 header.style.setProperty('--bgBlurPosY', `${by-window.innerHeight*2+window.scrollY}px`);
+
+                if (navigator.userAgentData.mobile) {
+                    document.querySelectorAll(".card").forEach(card => {
+                        let box = card.getBoundingClientRect();
+                        let centeredAmount = 1 - (Math.abs((box.y - (window.innerHeight/2)) * 2) / window.innerHeight/2);
+                        let xOff = 1 - (Math.abs(((box.y - (window.innerHeight/2)) ** 2) / 20)  / window.innerHeight/2);
+                        card.style.transform = `scale(${centeredAmount}) translateX(${xOff*50}px)`;
+                        console.log(centeredAmount);
+                    });
+                }
                 
 
                 // header.style.backgroundPositionX = `${bx-window.innerWidth*2}px`;
