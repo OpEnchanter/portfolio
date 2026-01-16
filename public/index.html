@@ -55,10 +55,12 @@
                             });
 
                             card.addEventListener('mousemove', (e) => {
-                                card.style.setProperty("--card-rotation-x", `${e.clientX - (rect.left + rect.width / 2)}`);
-                                card.style.setProperty("--card-rotation-y", `${(rect.top + rect.height / 2) - e.clientY}`);
-                                card.style.setProperty("--shadow-offset-x", `${-0.05 * (e.clientX - (rect.left + rect.width / 2))}px`);
-                                card.style.setProperty("--shadow-offset-y", `${0.1 * ((rect.top + rect.height / 2) - e.clientY)}px`);
+                                let mouseDiffNormalizedX = (e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
+                                let mouseDiffNormalizedY = ((rect.top + rect.height / 2) - e.clientY) / (rect.height / 2);
+                                card.style.setProperty("--card-rotation-x", `${mouseDiffNormalizedX*15}deg`);
+                                card.style.setProperty("--card-rotation-y", `${mouseDiffNormalizedY*15}deg`);
+                                card.style.setProperty("--shadow-offset-x", `${mouseDiffNormalizedX * -15}px`);
+                                card.style.setProperty("--shadow-offset-y", `${mouseDiffNormalizedY * 15}px`);
                             });
 
 							{
