@@ -1,55 +1,50 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style>
-            @font-face {
-                font-family: 'quicksand';
-                src: url('/quicksand.ttf') format('truetype');
-                /* You can specify additional font formats (e.g., woff, woff2) for better browser compatibility */
-            }
-            .main{
-                position: absolute;
-                width: 100vw;
-                height: 100vw;
-                margin: 0px;
-                align-self: center;
-                text-align: center;
-                align-items: center;
-                align-content: center;
-                vertical-align: center;
-                place-content: center;
-                place-items: center;
-                background-color: rgb(38, 38, 38);
-            }
-            body{
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-                font-family: 'quicksand';
-            }
-            .card{
-                display: inline-flex;
-                position: relative;
-                width: 50%;
-                height: 25%;
-                background-color: rgb(90, 90, 90);
-                place-content: center;
-                align-items: center;
-                border-radius: 10px;
-            }
-            .card > h2{
-                display: block;
-            }
-            .card > h3{
-                display: block;
-            }
-        </style>
+        <link rel="stylesheet" href="styles.css" />
     </head>
-    <body>
-        <div class="main">
-            <div class="card">
-                <h3>That page does not exist. ¯\_(ツ)_/¯</h3>
+    <body style="height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+        <div class="header" id="header">
+            <div class="header-content">
+                <h1 class="name">(ʘ ʖ̯ ʘ)</h1>
+                <p class="about">Hi! I'm the man at the end of the website!</p>
             </div>
         </div>
+        <script>
+            var vx = 0;
+            var vy = 0;
+
+            var bx = 0;
+            var by = 0;
+
+            var mx = 0;
+            var my = 0;
+            const header = document.getElementById("header");
+
+            window.addEventListener('mousemove', function(e) {
+
+                vx += (e.clientX - mx) * 0.01;
+                vy += (e.clientY - my) * 0.01;
+
+                mx = e.clientX;
+                my = e.clientY;
+            });
+
+            function update_bg() {
+                bx += vx;
+                by += vy;
+
+                bx = bx % window.innerWidth;
+                by = by % window.innerHeight;
+
+                vx*=0.99;
+                vy*=0.99;
+
+                header.style.setProperty('--bgBlurPosX', `${bx-window.innerWidth*2}px`);
+                header.style.setProperty('--bgBlurPosY', `${by-window.innerHeight*2+window.scrollY}px`);
+            }
+
+            setInterval(update_bg, 1)
+        </script>
     </body>
 </html>
