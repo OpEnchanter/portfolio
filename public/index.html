@@ -29,6 +29,8 @@
             </div>
         </div>
 		<div class="body-content"></div>
+            <p>hi!</p>
+        </div>
         <script>
             var vx = 0;
             var vy = 0;
@@ -54,8 +56,9 @@
 							// Create card
 							let card = document.createElement("div");
 							card.className = "card";
+                            const isMobile = navigator.userAgentData && Object.hasOwn(navigator.userAgentData, "mobile") ? navigator.userAgentData.mobile : false;
                             
-                            if (!navigator.userAgentData.mobile) {
+                            if (!isMobile) {
                                 let rect;
 
                                 card.addEventListener('mouseenter', () => {
@@ -169,7 +172,9 @@
                 header.style.setProperty('--bgBlurPosX', `${bx-window.innerWidth*2}px`);
                 header.style.setProperty('--bgBlurPosY', `${by-window.innerHeight*2+window.scrollY}px`);
 
-                if (navigator.userAgentData.mobile) {
+                const isMobile = navigator.userAgentData && Object.hasOwn(navigator.userAgentData, "mobile") ? navigator.userAgentData.mobile : false;
+
+                if (isMobile) {
                     document.querySelectorAll(".card").forEach(card => {
                         let box = card.getBoundingClientRect();
                         let centeredAmount = 1 - (Math.abs((box.y - (window.innerHeight/2)) * 2) / window.innerHeight/2);
@@ -184,7 +189,26 @@
                 // header.style.backgroundPositionY = `${by-window.innerHeight*2+window.scrollY}px`;
             }
 
-            setInterval(update_bg, 1)
+            setInterval(update_bg, 33)
+
+            document.querySelector(".body-content").appendChild((() => {
+                const elem = document.createElement("div");
+                elem.className = "footer";
+                elem.appendChild((() => {
+                    const chip = document.createElement('div');
+                    chip.className = "chip";
+                    chip.innerText = `Uptime: 0d 0h 0m 0s`;
+
+                    setInterval(async () => {
+                        await fetch("/api/uptime")
+                            .then(res => { return res.json() })
+                            .then(data => { chip.innerText = `System Uptime: ${data.day}d ${data.hrs}h ${data.min}m ${data.sec}s` });
+                    }, 1);
+
+                    return chip;
+                })());
+                return elem;
+            })());
 
         </script>
     </body>
