@@ -12,16 +12,8 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/uptime", (req, res) => {
-    const uptimeSeconds = os.uptime() % 60;
-    const uptimeMinutes = Math.round((os.uptime() / 60)) % 60;
-    const uptimeHours = Math.round(((os.uptime() / 60) / 60)) % 24;
-    const uptimeDays = Math.round((((os.uptime() / 60) / 60) / 24));
-
     res.send(JSON.stringify({
-        sec: uptimeSeconds,
-        min: uptimeMinutes,
-        hrs: uptimeHours,
-        day: uptimeDays
+        sec: os.uptime()
     }));
 });
 

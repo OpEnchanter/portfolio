@@ -198,11 +198,23 @@
                     const chip = document.createElement('div');
                     chip.className = "chip";
                     chip.innerText = `Uptime: 0d 0h 0m 0s`;
+                    let uptime = undefined
 
                     setInterval(async () => {
-                        await fetch("/api/uptime")
-                            .then(res => { return res.json() })
-                            .then(data => { chip.innerText = `System Uptime: ${data.day}d ${data.hrs}h ${data.min}m ${data.sec}s` });
+                        if (uptime == undefined) {
+                            await fetch("/api/uptime")
+                                .then(res => { return res.json(); })
+                              .then(data => { uptime = data.sec; });
+                        } else {
+                            uptime++;
+                        }
+                        
+                        const uptimeSeconds = uptime % 60;
+                        const uptimeMinutes = Math.round((uptime / 60)) % 60;
+                        const uptimeHours = Math.round(((uptime / 60) / 60)) % 24;
+                        const uptimeDays = Math.round((((uptime / 60) / 60) / 24));
+                        
+                        chip.innerText = `System Uptime: ${uptimeDays}d ${uptimeHours}h ${uptimeMinutes}m ${uptimeSeconds}s`
                     }, 1000);
 
                     return chip;
