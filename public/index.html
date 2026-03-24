@@ -203,7 +203,7 @@
                         await fetch("/api/uptime")
                             .then(res => { return res.json() })
                             .then(data => { chip.innerText = `System Uptime: ${data.day}d ${data.hrs}h ${data.min}m ${data.sec}s` });
-                    }, 1);
+                    }, 1000);
 
                     return chip;
                 })());
